@@ -1,0 +1,28 @@
+{
+  "name": "fed-exercise",
+  "version": "1.0.0",
+  "description": "Front end example",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server --open=dist",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "node-sass --include-path scss css/style.scss dist/css/style.css",
+    "watch": "nodemon -e scss -x 'npm run css'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eegans/fed-exercise.git"
+  },
+  "author": "Emily Egan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eegans/fed-exercise/issues"
+  },
+  "homepage": "https://github.com/eegans/fed-exercise#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

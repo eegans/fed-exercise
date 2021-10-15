@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css?family=Open+sans:400|Oswald:400,700");
+
+ // ****  Variables  ****** //
+ // *****************************//
+$table_head_col: #ccc;
+$table_row_col: #eee;
+$table_bor_col: #eee;
+$container_width: 700px;
+$first_col_width: 150px;
+$primary-font: 'Open Sans', sans-serif; //Main site font
+$secondary-font: 'Oswald', sans-serif; //Header font
+$primary-color: #ED503E;
+$accent-color: #000;
+$dark-grey: #4A4A4A;
+$white: #fff;
+
+
+ // ****  Mixins  ****** //
+ // *****************************//
+ @mixin headers($font: "Open Sans, sans-serif", $color: #fff, $weight: 400, $margin: 10px 0, $padding: 0, $size: 24px) {
+    font-family: $font; 
+    color: $color;
+    font-weight: $weight;
+    margin: $margin;
+    padding: $padding;
+    font-size: $size;
+  }
+
+ // ****  Extended Groups  ****** //
+ // *****************************//
+ %btn-base {
+   font-weight: 700;
+   padding: 18px 22px;
+   font-size: 16px;
+   font-family: $primary-font;
+   text-transform: uppercase;
+   margin: 0;
+   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+   border: 0;
+   background: $primary-color;
+   color: $white;
+ }
+
+
+ // ****  General Styles  ****** //
+ // *****************************//
+ * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    position: relative;
+}
+  
+  body {
+    text-rendering: optimizeLegibility;
+    color: $dark-grey;
+    min-height: 100vh;
+    font-size: 16px;
+    background-color: $white;
+    font-family: $primary-font;
+}
+
+h1 {
+    @include headers($secondary-font, $white, 400, 100px 0 35px, 0, 46px);
+}
+h2 {
+    @include headers($primary-font, $white, 400, 0 0 26px, 0, 30px);
+}
+h3 {
+    @include headers($secondary-font, $dark-grey, 700, 0 0 28px, 0, 24px);
+    text-transform: uppercase;
+}
+h4 {
+    @include headers($primary-font, $white, 400, 0 0 30px, 0, 18px);
+}
+
+h5 {
+    @include headers($secondary-font, $accent-color, 400, 0 0 5px, 0, 21px);
+}
+
+p {
+    font-family: $primary-font;
+    color: $dark-grey;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+nav {
+    background-color: $accent-color;
+    width: 100%;
+    padding: 20px 42px;
+}
+
+section {
+    padding: 70px;
+    width: 100%;
+    height: 100%;
+}
+
+section.banner {
+    background: url(../images/divider.svg) bottom, url(../images/banner-tablet.png) top center;
+    background-repeat: no-repeat;
+    background-size: 100%, cover;
+    height: 588px;
+    text-align: center;
+    background-position: 0% 100%, 10% 10%;
+}
+
+section.logos {
+    background: url(../images/orange-banner.svg) top, url(../images/black-banner.svg) top center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 400px;
+    text-align: center;
+    padding: 80px 0 0;
+
+    .col-auto {
+        margin-top: 30px;
+        padding-right: 35px;
+    }
+}
+
+section.hq {
+    background: url(../images/fed-hq-tablet.png) top center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 400px;
+    text-align: center;
+}
+
+.values {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; 
+    align-items: start;
+    img {
+        padding-right: 15px;
+    }
+    .content {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%; 
+    }
+
+    p {
+        margin: 0 0 30px;
+    }
+}
+
+section.join {
+    background: url(../images/orange-middle-footer.svg) top center, url(../images/top-black-footer.svg) top, url(../images/bottom-black-footer.svg) bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    padding: 80px 0 0;
+
+    h3 {
+        color: $white;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .card {
+        padding: 50px;
+        background-color: $white;
+        margin-right: 25px;
+
+        p {
+            margin-bottom: 30px;
+            color: $accent-color;            
+        }
+
+        a {
+            color: $primary-color;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+
+            &::after {
+                color: $accent-color;
+                padding-left: 7px;
+                content: ">>";
+                font-size: 16px;
+                font-family: $secondary-font;
+                vertical-align: top;
+            }
+        }       
+    }    
+}
+
+.button {
+    @extend %btn-base;
+}
+
+section.footer {
+    display: block;
+    height: 10%;
+    padding-top: 1%;
+    padding-bottom: 3%;
+    background-color: #323232;
+    background-image: none;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+//** Grid ** //
+//** Normally I would just use Bootstrap's grid because why create your own grid ** // 
+.main-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col, .col-auto, .col-6, .col-8, .col-9 {
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%; 
+}
+
+.col-auto {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+}
+
+.col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+
+.col-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.align-items-center {
+   align-items: center!important;
+}
+
+.align-self-center {
+  align-self: center!important;
+}
+
+.justify-content-center {
+ justify-content: center!important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.aside-top {
+    margin-top: 15px;
+}
+
+.full-height {
+    height: 100%;
+    min-height: 100%;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+//** Media Queries ** // 
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+
+
+
+
+
