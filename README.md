@@ -36,11 +36,6 @@ npm run start
 npm run css
 ```
 
-We will assess your competency based on the following criteria:
-* Attention to detail
-* File type, size, and optimization
-* Responsiveness
-* Efficiency in code, when possible ("Don't Repeat Yourself")
 
 
 
