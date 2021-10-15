@@ -2,11 +2,6 @@
 
  // ****  Variables  ****** //
  // *****************************//
-$table_head_col: #ccc;
-$table_row_col: #eee;
-$table_bor_col: #eee;
-$container_width: 700px;
-$first_col_width: 150px;
 $primary-font: 'Open Sans', sans-serif; //Main site font
 $secondary-font: 'Oswald', sans-serif; //Header font
 $primary-color: #ED503E;
@@ -115,7 +110,7 @@ section.banner {
 section.logos {
     background: url(../images/orange-banner.svg) top, url(../images/black-banner.svg) top center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     height: 400px;
     text-align: center;
     padding: 80px 0 0;
@@ -129,7 +124,7 @@ section.logos {
 section.hq {
     background: url(../images/fed-hq-tablet.png) top center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     height: 400px;
     text-align: center;
 }
@@ -168,7 +163,7 @@ section.join {
     .card {
         padding: 50px;
         background-color: $white;
-        margin-right: 25px;
+        margin-top: 20px;
 
         p {
             margin-bottom: 30px;
@@ -198,16 +193,6 @@ section.join {
     @extend %btn-base;
 }
 
-section.footer {
-    display: block;
-    height: 10%;
-    padding-top: 1%;
-    padding-bottom: 3%;
-    background-color: #323232;
-    background-image: none;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
-}
 
 //** Grid ** //
 //** Normally I would just use Bootstrap's grid because why create your own grid ** // 
@@ -240,31 +225,10 @@ section.footer {
     position: relative;
 }
 
-.col {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%; 
-}
-
 .col-auto {
     flex: 0 0 auto;
     width: auto;
     max-width: none;
-}
-
-.col-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-
-.col-8 {
-    flex: 0 0 66.666667%;
-    max-width: 66.666667%;
-}
-
-.col-9 {
-    flex: 0 0 75%;
-    max-width: 75%;
 }
 
 .align-items-center {
@@ -292,21 +256,89 @@ section.footer {
     min-height: 100%;
 }
 
+@media (min-width: 320px) {
+    .container {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .col, .col-8, .col-9, .col-6 {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+
+    section {
+        padding: 25px;
+    }
+}
+
 @media (min-width: 576px) {
     .container {
         max-width: 540px;
     }
+
+    h1 {
+        font-size: 46px;
+    }
+
+    h2 {
+        font-size: 30px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+   
 }
 
 @media (min-width: 768px) {
     .container {
         max-width: 720px;
     }
+
+    .col {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%; 
+    }
+
+    .col-6 {
+        flex: 0 0 50%;
+         max-width: 50%;
+    }
+
+    .col-8 {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+
+    .col-9 {
+        flex: 0 0 75%;
+         max-width: 75%;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .card {
+        margin-right: 25px;
+    }
 }
 
 @media (min-width: 992px) {
     .container {
         max-width: 960px;
+    }
+
+    section {
+        padding: 70px;
     }
 }
 

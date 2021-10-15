@@ -14,7 +14,7 @@ Before you can run this project you need to have a couple things installed first
 
 ## Development server
 
-Run `npm run start` which runs live-server, which is a lightweight dev server which live reloads. Will launch Navigate to `http://127.0.0.1:8080/dist/`. 
+Run `npm run start` which runs live-server, which is a lightweight dev server which live reloads. Will navigate to `http://127.0.0.1:8080/dist/`. 
 
 ## Get Started!
 
@@ -24,7 +24,7 @@ Run `npm run start` which runs live-server, which is a lightweight dev server wh
 npm install
 ```
 
-2. Launch development server which runs live-server--a lightweight dev server which with live reload. Will launch Navigate to `http://127.0.0.1:8080/dist/`. :
+2. Launch development server which runs live-server--a lightweight dev server which with live reload. Will navigate to `http://127.0.0.1:8080/dist/`. :
 
 ```sh
 npm run start

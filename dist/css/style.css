@@ -98,8 +98,8 @@ section.banner {
 section.logos {
   background: url(../images/orange-banner.svg) top, url(../images/black-banner.svg) top center;
   background-repeat: no-repeat;
-  background-size: 100%;
-  height: 500px;
+  background-size: cover;
+  height: 400px;
   text-align: center;
   padding: 80px 0 0; }
   section.logos .col-auto {
@@ -109,7 +109,7 @@ section.logos {
 section.hq {
   background: url(../images/fed-hq-tablet.png) top center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   height: 400px;
   text-align: center; }
 
@@ -140,7 +140,7 @@ section.join {
   section.join .card {
     padding: 50px;
     background-color: #fff;
-    margin-right: 25px; }
+    margin-top: 20px; }
     section.join .card p {
       margin-bottom: 30px;
       color: #000; }
@@ -157,16 +157,6 @@ section.join {
         font-size: 16px;
         font-family: "Oswald", sans-serif;
         vertical-align: top; }
-
-section.footer {
-  display: block;
-  height: 10%;
-  padding-top: 1%;
-  padding-bottom: 3%;
-  background-color: #323232;
-  background-image: none;
-  font-family: 'Open Sans', sans-serif;
-  text-align: center; }
 
 .main-container {
   width: 100%;
@@ -193,27 +183,10 @@ section.footer {
   padding-left: 15px;
   position: relative; }
 
-.col {
-  flex-basis: 0;
-  flex-grow: 1;
-  max-width: 100%; }
-
 .col-auto {
   flex: 0 0 auto;
   width: auto;
   max-width: none; }
-
-.col-6 {
-  flex: 0 0 50%;
-  max-width: 50%; }
-
-.col-8 {
-  flex: 0 0 66.666667%;
-  max-width: 66.666667%; }
-
-.col-9 {
-  flex: 0 0 75%;
-  max-width: 75%; }
 
 .align-items-center {
   align-items: center !important; }
@@ -234,17 +207,56 @@ section.footer {
   height: 100%;
   min-height: 100%; }
 
+@media (min-width: 320px) {
+  .container {
+    width: 100%; }
+  h1 {
+    font-size: 30px; }
+  h2 {
+    font-size: 20px; }
+  .col, .col-8, .col-9, .col-6 {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%; }
+  section {
+    padding: 25px; } }
+
 @media (min-width: 576px) {
   .container {
-    max-width: 540px; } }
+    max-width: 540px; }
+  h1 {
+    font-size: 46px; }
+  h2 {
+    font-size: 30px;
+    max-width: 600px;
+    margin: 0 auto; } }
 
 @media (min-width: 768px) {
   .container {
-    max-width: 720px; } }
+    max-width: 720px; }
+  .col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%; }
+  .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%; }
+  .col-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%; }
+  .col-9 {
+    flex: 0 0 75%;
+    max-width: 75%; }
+  section {
+    padding: 20px; }
+  .card {
+    margin-right: 25px; } }
 
 @media (min-width: 992px) {
   .container {
-    max-width: 960px; } }
+    max-width: 960px; }
+  section {
+    padding: 70px; } }
 
 @media (min-width: 1200px) {
   .container {
